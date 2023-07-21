@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Junho's Portfolio</title>
+  
+  <link href='https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap' rel='stylesheet'>
+  <link href='https://fonts.cdnfonts.com/css/slick' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+  
+  <link rel="stylesheet" href="./main.css">
+  <link rel="stylesheet" href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css">
+  
+  <style>
+ .typewriter {
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: .15em solid;
+  animation: blink 1s infinite;
+  opacity: 0; /* Start invisible */
+}
+
+.typewriter.anim-typewriter {
+  animation: typewriter 4s steps(44) 1s 1 normal both,
+              blink 1s steps(44) infinite normal,
+              fadeIn 2s;
+  opacity: 1; /* Become visible when the animation starts */
+}
+
+@keyframes typewriter {
+  from { width: 0; }
+  to { width: 24em; }
+}
+
+@keyframes blink {
+  from, to { border-color: transparent }
+  50% { border-color: black; }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+  </style>
+</head>
+<body>
+  <div id="navigation" class="container gray highlightTextIn">
+    <a alt="HOME">HOME</a>
+    <a alt="ARTICLES">ARTICLES</a>
+    <a alt="PORTFOLIO">PORTFOLIO</a>
+    <a alt="ABOUT">ABOUT</a>
+    <a alt="CONTACT">CONTACT</a>
+  </div>
+
+  <div class="section" id="section1">
+    <h1>HI I'M JUNHO</h1>
+    <h2 class="reveal">CREATOR &<br> Researcher</h2>
+    <p class="profile-description anim-typewriter">
+      As a creative and analytical professional, I specialize in integrating analytics into software solutions. 
+      With a passion for insightful analysis and exploring cutting-edge algorithms, 
+      I strive to turn complex data into meaningful solutions.
+    </p>	  
+  </div>
+  
+  <div class="section" id="section2">
+    <h1 class="sub_section" data-aos="fade-up">Baseball Stat</h1>
+    <p class="profile-description anim-typewriter-delay">This study explores the unique playing style of the Korean Baseball League (KBO) influenced by both the Japanese and American baseball cultures.<br> The study tests the Pythagorean Expectation statistic used in Major League Baseball for predicting the expected win rate on KBO teams using multi polynomial regression.<br> The study aims to find the best model to predict the win_loss_percentage and compare its accuracy with the Pythagorean Expectation model.
+    </p>	  
+  </div>
+
+  <div class="section" id="section3">
+    <h1 class="sub_section" data-aos="fade-up">Clinic profit prediction</h1>
+  </div>
+
+  <div class="section" id="section4">
+    <h1 class="sub_section" data-aos="fade-up">Document Cluster</h1>
+  </div>
+
+  <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      once: false, // whether animation should happen only once - while scrolling down
+      offset: 300, // offset (in px) from the original trigger point
+      delay: 3, // values from 0 to 3000, with step 50ms
+      duration: 1000, // values from 0 to 3000, with step 50ms
+    });
+  </script>
+</body>
+</html>

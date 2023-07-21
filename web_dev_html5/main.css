@@ -1,0 +1,359 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.cdnfonts.com/css/slick');
+
+@keyframes fade-in {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+body, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+}
+
+h1, p {
+    animation: fade-in 5s;
+}
+
+main {
+    display: grid;
+    height: 100vh;
+    width: 100vw;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    background-color: black;
+}
+
+.section {
+    display: grid;
+    place-content: center;
+    height: 100vh;
+    width: 100vw;
+    scroll-snap-align: start;
+    position: relative;
+}
+
+#section1 {
+    background-image: url('./img/waves.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#section2, #section3, #section4 {
+    background-color: black;
+}
+
+h1 {
+    position: absolute;
+    left: 75%; /* Adjust this to move the heading horizontally */
+    top: 10%; /* Adjust this to move the heading vertically */
+    font-size: 5vh; /* Use viewport heights instead of viewport widths */
+    text-align: left; /* Align the text to the left */
+    text-shadow: 2px 2px #000000,
+                 4px 4px #000000,
+                 6px 6px #000000;
+    color: #FFEB6B;
+    font-family: 'slick', sans-serif;
+}
+
+.profile-description {
+    position: absolute;
+    left: 75%; /* Adjust this to move the description horizontally */
+    top: 20%; /* Adjust this to move the description vertically */
+    font-size: 2.5vh; /* Use viewport heights instead of viewport widths */
+    text-align: left; /* Align the text to the left */
+    max-width: 20%; /* Use a percentage for the max width */
+    color: white; /* Choose color that provides sufficient contrast against your background image */
+    font-family: 'slick', sans-serif;
+    line-height: 1.5; /* Space out your lines of text for better readability */
+    overflow: auto; /* Allow scrolling if the text exceeds the size of the container */
+}
+
+/* When the viewport is less than 600px wide, font-size is 8vw */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 8vw;
+    }
+}
+.view-project {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    padding: 10px 20px;
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+    z-index: 10; 
+  }
+  
+#navigation {
+    position: absolute;
+    top: -100px; /* adjust as needed */
+    right: 5px; /* adjust as needed */
+    z-index: 1;
+    background: none; /* remove the background color */
+}
+
+#navigation a {
+    color: #fff; /* set the color of the text */
+    text-decoration: none; /* remove underline */
+    margin-right: 20px; /* add space between menu items */
+    transition: color 0.3s ease; /* animate color change */
+    font-family: 'slick', sans-serif;
+}
+
+#navigation a:hover {
+    color: #f00; /* set color on hover, change #f00 to the color you want */
+}
+
+/* CSS */
+.line-1 {
+    /* Add your styling */
+    opacity: 10; /* Make the text initially invisible */
+    color: white
+}
+
+.line-1.anim-typewriter {
+    animation: typewriter 4s steps(44) 1s 1 normal both,
+               blinkTextCursor 500ms steps(44) infinite normal,
+               fadeIn 2s; /* Add this to fade the text in */
+    opacity: 1; /* Make the text visible when the animation starts */
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+
+/* Animation */
+.anim-typewriter{
+  animation: typewriter 6s steps(44) 1s 1 normal both,
+             blinkTextCursor 500ms steps(44) infinite normal;
+}
+
+.anim-typewriter-delay {
+    
+    animation: typewriter 6s steps(44) 1s 1 normal both,
+                   blinkTextCursor 500ms steps(44) infinite normal;
+    animation-delay: 6s;
+  }
+
+@keyframes typewriter{
+  from{width: 0;}
+  to{width: 24em;}
+}
+@keyframes blinkTextCursor{
+  from{border-right-color: rgba(255,255,255,.75);}
+  to{border-right-color: transparent;}
+}
+
+.reveal,
+.reveal::after {
+	        animation-delay: 0;
+	        animation-delay: var(--animation-delay, 4s);
+	        animation-iteration-count: 1;
+	        animation-iteration-count: var(--iterations, 1);
+	        animation-duration: 800ms;
+	        animation-duration: var(--duration, 800ms);
+	        animation-fill-mode: both;
+	        animation-timing-function: cubic-bezier(0.0, 0.0, 0.2, 1);
+}
+
+.reveal {
+	position: relative;
+	font-size: 6vw;
+	animation-name: text;
+	color: #FFF;
+	white-space: nowrap;
+	cursor: default;
+	text-transform: uppercase;
+	
+}
+
+.reveal::after {
+		content: "";
+		position: absolute;
+		z-index: 999;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: #f2f98b;
+		        transform: scaleX(0);
+		        transform-origin: 0 50%;
+		pointer-events: none;
+		        animation-name: revealer;
+	}
+
+
+
+@keyframes text {
+	from {
+		        clip-path: inset(0 100% 0 0);
+	}
+	to {
+		        clip-path: inset(0 0 0 0);
+	}
+}
+
+
+
+
+@keyframes revealer {
+	
+	0%, 50% {
+		        transform-origin: 0 50%;
+	}
+	
+	60%, 100% {
+		        transform-origin: 100% 50%;		
+	}
+
+	
+	60% {
+		        transform: scaleX(1);
+	}
+	
+	100% {
+		        transform: scaleX(0);
+	}
+}
+@import 'https://fonts.googleapis.com/css?family=Raleway';
+
+html, body
+{
+    margin: 0px;
+}
+
+header, footer
+{
+    font-family: Raleway;
+    margin: 0 auto;
+	padding: 5em 3em;
+	text-align: center;
+    background: #555;
+}
+
+header h1
+{
+    color: #AAA;
+    font-size: 40px;
+    font-weight: lighter;
+    margin-bottom: 5px;
+}
+
+header span
+{
+    color: #222;
+}
+
+footer span
+{
+  color: #AAA;
+}
+
+div.container
+{
+    font-family: Raleway;
+    margin: 0 auto;
+	padding: 10em 3em;
+	text-align: center;
+}
+
+div.container a
+{
+    color: #FFF;
+    text-decoration: none;
+    font: 20px Raleway;
+    margin: 0px 10px;
+    padding: 10px 10px;
+    position: relative;
+    z-index: 0;
+    cursor: pointer;
+}
+
+
+.gray
+{
+    background: #9e9e9e;
+}
+
+/* Top border go down and Left border appears */
+div.topLeftBorders a:before
+{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 2px;
+    height: 0px;
+    background: #FFF;
+    content: "";
+    opacity: 1;
+    transition: all 0.3s;
+}
+
+/* Highlight text out  */
+div.highlightTextOut a
+{
+    color: rgba(255, 255, 255, 0.3); 
+}
+
+div.highlightTextOut a:before, div.highlightTextIn a:before
+{
+    position: absolute;
+    color: #FFF;
+    top: 0px;
+    left: 0px;
+    padding: 10px;
+    overflow: hidden;
+    content: attr(alt);
+    transition: all 0.3s;
+    transform: scale(0.8);
+    opacity: 0;
+} 
+
+div.highlightTextOut a:hover:before, div.highlightTextIn a:hover:before
+{
+    transform: scale(1);
+    opacity: 1;
+}
+
+/* Highlight text in  */
+div.highlightTextIn a
+{
+    color: rgba(0, 0, 0, 0.4); 
+}
+
+div.highlightTextIn a:before
+{
+    transform: scale(1.2);
+} 
+
+.sub_section::before {  
+    transform: scaleX(0);
+    transform-origin: bottom right;
+  }
+  
+  .sub_section:hover::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  
+  .sub_section::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    inset: 0 0 0 0;
+    background: hsl(200 100% 80%);
+    z-index: -1;
+    transition: transform .3s ease;
+  }
+  
+  .sub_section {
+    
+    font-size: 4rem;
+  }
